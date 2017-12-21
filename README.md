@@ -87,9 +87,4 @@ Resources
 ==================
 
 -yui compressor: to compress js and css files http://yui.github.io/yuicompressor/
--css/
-    -pure css 
-    -pure css grids
--js/
-    -hbsm lib
 -resources_man.txt: has documentation on options for using yui compressor
