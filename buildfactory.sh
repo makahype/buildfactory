@@ -1,15 +1,7 @@
 #!/bin/bash
 
-#load configuration to be used
+#currently everything in config
 ./config.sh
 
-
-
-BF_DIR = $PWD
-#process builds
-./process.sh
-
-
-#prepare for use
-./stamp.sh
-
+#and build with no process
+cat ../superbot/src/js/utility.js ../superbot/src/js/handler.js ../superbot/src/js/sender.js ../superbot/src/js/manager.js ../superbot/src/js/glbobj.js > ../superbot/sb_full.js
