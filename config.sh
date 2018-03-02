@@ -16,7 +16,11 @@ BF_ED_CSS=""
 #enpoints to create from your javascript processed resources
 declare -a BF_BLD_ROUTE_JSFILES
 declare -a BF_BLD_ROUTE_JSEND
+<<<<<<< HEAD
 BF_BLD_ROUTE_JSFILES[0]="utility-min.js handler-min.js manager-min.js sender-min.js glbobj-min.js"
+=======
+BF_BLD_ROUTE_JSFILES[0]="handler-min.js manager-min.js sender-min.js utility-min.js"
+>>>>>>> 41e5e5f9dca9f5b6bdf2c380756b59b2835e4618
 BF_BLD_ROUTE_JSEND[0]="sb.js"
 
 #enpoints to create from your css processed resources
