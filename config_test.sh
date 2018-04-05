@@ -10,7 +10,7 @@ BF_BLD_LAYERS[0]="common"
 
 #folders for endpoint files
 BF_ED_JS=$BF_RSC_FLDR"/js"
-BF_ED_CSS="/css"
+BF_ED_CSS=$BF_RSC_FLDR"/css"
 
 #enpoints to create from your javascript processed resources
 declare -a BF_BLD_ROUTE_JSFILES

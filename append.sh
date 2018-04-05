@@ -15,7 +15,7 @@ done
 
 
 #css files 
-cd ../$BF_ED_CSS
+cd $BF_ED_CSS
 count=0
 while [ "tested${BF_BLD_ROUTE_CSSFILES[count]}" != "tested" ]
 do
