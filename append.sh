@@ -15,7 +15,7 @@ done
 
 
 #css files 
-cd $BF_ED_CSS
+cd ../$BF_ED_CSS
 count=0
 while [ "tested${BF_BLD_ROUTE_CSSFILES[count]}" != "tested" ]
 do
@@ -24,4 +24,22 @@ do
     count=$(( $count + 1 ))
 done
 
+
+#delete the minified files
+cd ../
+rm js/*-min.js
+
+for layer in "${BF_BLD_LAYERS[@]}";
+do
+    rm js/$layer/*-min.js
+done
+
+
+cd ../
+rm css/*-min.css
+
+for layer in "${BF_BLD_LAYERS[@]}";
+do
+    rm css/$layer/*-min.css
+done
 

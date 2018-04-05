@@ -3,21 +3,10 @@
 
 
 
+
+
 #directory we are calling from
 BF_DIR=$PWD
-
-
-#cleanup old output
-rm -r output/css/*
-rm -r output/js/*
-
-#make foders that have been deleted
-for layer in "${BF_BLD_LAYERS[@]}";
-do
-    mkdir output/css/$layer
-    mkdir output/js/$layer    
-done
-
 
 
 #move back to source folder
