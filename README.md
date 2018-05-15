@@ -11,25 +11,60 @@ css and js and then appends files together based on a user configuration
 #About the code:
 * the code is a set of bash files that are appended together to create one file to execute the build
 * the config.sh file is where the user details the structure of their frontend source code (css, js) and how it composes the output files
-* execute command :  sudo ./buildfactory.sh
+* the config takes an array of subfolders (layers) to process for your css and js, the css array is also applied to processing
+your less files. It is expected since you have configured a subfolder in your css you will have the corresponding less file
+that compiles to that css file. This does not exclude you from adding extra folders in your less folder to organize variables
+and other common elements. You can import these using the less commands normally without having to configure that in your
+build process
+* the process does not setup your end point folder , so make sure you have the correct  folders ready to take your
+processed files
 
+
+#resource folder structure:
+* rsc folder:
+    * css
+        * css sub layer (generated from less process)
+    * js
+        * js sub layer
+    * less
+        * css sub layer
+
+* external end js folder
+
+* external end css folder
 
 #Config variables
-* PWD : the working directory for buildfactory.sj
-* BF_RSC_FLDR : where your source folder is for your frontend code
+* PWD : the working directory for buildfactory.sh
+* BF_RSC_FLDR : where your source folder is for your frontend code relative to the config file
+
 * BF_BLD_LAYERS[n] = "..." : array of various sub folders in your source folder
-* BF_ED_JS : javascript folder in your resource folder
-* BF_ED_JS : css folder in your resource folder
-* BF_BLD_ROUTE_JSFILES[0] = "....." : array in which each entity is a set of files to append together post minification for js
-* BF_BLD_ROUTE_JSEND[0] = "..." : array that is the end point of the appended files from the ""_JSFILES array
-* BF_BLD_ROUTE_CSSFILES[0] = "....." : array in which each entity is a set of files to append together post minification for css
-* BF_BLD_ROUTE_CSSEND[0] = "..." : array that is the end point of the appended files from the ""_CSSFILES array
+* BF_BLD_CSS_LAYERS[n] = "..." : array of various sub folders in your source folder
+
+* BF_ED_JS : javascript folder for your end output relative to the config file
+* BF_ED_CSS : css folder for your end output relative to the config file
+
+* BF_BLD_ROUTE_JSFILES[0] = "....." : array in which each entity is a set of files separated by a space to append 
+together post minification for js. Each file relative to the resource/js folder
+* BF_BLD_ROUTE_JSEND[0] = "..." : array that is the end point of the appended files from the ""_JSFILES array within the
+BF_ED_JS folder
+
+* BF_BLD_ROUTE_CSSFILES[0] = "....." : array in which each entity is a set of files separated by a space to append 
+together post minification for css. . Each file relative to the resource/css folder
+* BF_BLD_ROUTE_CSSEND[0] = "..." : array that is the end point of the appended files from the ""_CSSFILES array within the
+BF_ED_CSS folder
 
 
 
 
-Resources
+#how to run
+* edit the config file to point to your source folder
+* cd into the buildfactory folder
+* run sudo ./buildfactory.sh
+
+
+#Resources
 ==================
 
 -yui compressor: to compress js and css files http://yui.github.io/yuicompressor/
+-less4j: to compile less to css files  https://github.com/SomMeri/less4j
 -resources_man.txt: has documentation on options for using yui compressor
