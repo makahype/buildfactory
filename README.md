@@ -3,12 +3,7 @@ A generic build structure and process for frontend web application files. It min
 css and js and then appends files together based on a user configuration
 
 
-# requirements:
-* yui compressor , youll need to download and place in the buildfactory folder
-* a little knowledge of bash to edit the configuration
-
-
-#About the code:
+## About the code:
 * the code is a set of bash files that are appended together to create one file to execute the build
 * the config.sh file is where the user details the structure of their frontend source code (css, js) and how it composes the output files
 * the config takes an array of subfolders (layers) to process for your css and js, the css array is also applied to processing
@@ -20,7 +15,7 @@ build process
 processed files
 
 
-#resource folder structure:
+## resource folder structure:
 * rsc folder:
     * css
         * css sub layer (generated from less process)
@@ -33,7 +28,7 @@ processed files
 
 * external end css folder
 
-#Config variables
+## Config variables
 * PWD : the working directory for buildfactory.sh
 * BF_RSC_FLDR : where your source folder is for your frontend code relative to the config file
 
@@ -56,15 +51,22 @@ BF_ED_CSS folder
 
 
 
-#how to run
+## how to run
 * edit the config file to point to your source folder
 * cd into the buildfactory folder
 * run sudo ./buildfactory.sh
 
 
-#Resources
+## Resources and requirements
 ==================
 
--yui compressor: to compress js and css files http://yui.github.io/yuicompressor/
--less4j: to compile less to css files  https://github.com/SomMeri/less4j
+-yui compressor: to compress js and css files http://yui.github.io/yuicompressor/ (placed in root folder)
+-less4j: to compile less to css files  https://github.com/SomMeri/less4j (placed in root folder)
 -resources_man.txt: has documentation on options for using yui compressor
+
+
+## TODOS
+* create a better example
+* create a standard for moving files from output to actual code build locations
+* add less documentation
+* add tests process to make sure latest javascript works with yui compressor
