@@ -29,7 +29,7 @@ done
 for layer in "${BF_BLD_CSS_LAYERS[@]}";
 do
     for filename in less/$layer/*.less; do    
-        java -jar $BF_DIR/less4j-1.17.2.jar $filename "css/$layers/$(basename "$filename" .less).css"
+        java -jar $BF_DIR/less4j-1.17.2.jar $filename "css/$layer/$(basename "$filename" .less).css"
     done
 done
 

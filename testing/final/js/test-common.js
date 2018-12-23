@@ -1,0 +1,1 @@
+var cool=2;var newvar=33;var cool=2;var newvar=33;
