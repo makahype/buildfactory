@@ -57,9 +57,25 @@ BF_ED_CSS folder
 * run sudo ./buildfactory.sh
 
 
+## htmps process
+* a process to turn html templates into javascript strings
+* is not part of the build process and must be done before hand if the desire is to append these js files to the rest of the js logic
+* alternatively these templates can all be appenend into one file then loaded and maintained separately
+* steps to run:
+    * move html files into htmps directory with the in the form of file.htmp
+    * cd into the htmps directory
+    * run "java -jar sbhtmps.jar [filename1 no extension] [filename2] ...."
+    * file will be generated at htmps.js
+    * move js file to new directory
+    * cd to build factory
+    * run build
+* at this point the build and js logic should use the compiled html files rather than parsing html on page load
+
+
 ## Resources and requirements
 ==================
 
--yui compressor: to compress js and css files http://yui.github.io/yuicompressor/ (placed in root folder)
--less4j: to compile less to css files  https://github.com/SomMeri/less4j (placed in root folder)
--resources_man.txt: has documentation on options for using yui compressor
+- yui compressor: to compress js and css files http://yui.github.io/yuicompressor/ (placed in root folder)
+- less4j: to compile less to css files  https://github.com/SomMeri/less4j (placed in root folder)
+- resources_man.txt: has documentation on options for using yui compressor
+- java
