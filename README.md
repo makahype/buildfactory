@@ -64,7 +64,7 @@ BF_ED_CSS folder
 * steps to run:
     * move html files into htmps directory with the in the form of file.htmp
     * cd into the htmps directory
-    * run "java -jar sbhtmps.jar [filename1 no extension] [filename2] ...."
+    * run "java -jar sbhtmps.jar [file_output_name] [js object var name] [filename1 no extension] [filename2] ...."
     * file will be generated at htmps.js
     * move js file to new directory
     * cd to build factory
@@ -79,3 +79,12 @@ BF_ED_CSS folder
 - less4j: to compile less to css files  https://github.com/SomMeri/less4j (placed in root folder)
 - resources_man.txt: has documentation on options for using yui compressor
 - java
+
+
+##development the htmps file (html templates)
+=============================
+
+-compile: javac Sbhtmps.java
+-create jar: jar -cfm [jar name].jar manifest.mf [main class file]
+-manifest file is a very simple file in the dev folder that points to the main class file
+

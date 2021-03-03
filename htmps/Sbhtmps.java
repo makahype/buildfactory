@@ -2,10 +2,17 @@ import java.io.*;
 
 class Sbhtmps {
   public static void main(String[] args) throws IOException{
-  	//variable to hold template strings
-	String file_cnt_res = "var htmps = {};\n";
 
-	for(int i=0; i < args.length; i++){
+        //first argument holds the file name to be output
+        String file_dest = args[0];
+
+        //second argument hold the string to use as the javascript 
+        //object that will hold all the templates
+
+  	//variable to hold template strings
+	String file_cnt_res = "var "+args[1]+" = {};\n";
+
+	for(int i=2; i < args.length; i++){
 
 		InputStream filest = new FileInputStream(args[i]+".htmp");
 		BufferedReader buf = new BufferedReader(new InputStreamReader(filest));
@@ -19,12 +26,12 @@ class Sbhtmps {
 		}
 
 		//append variable to hold string
-		file_cnt_res = file_cnt_res + "htmps."+args[i]+" = \""+file_cnt.toString().replace("\"", "\\\""	)+"\";\n";
+		file_cnt_res = file_cnt_res + args[1] + "." + args[i] +" = \""+file_cnt.toString().replace("\"", "\\\""	)+"\";\n";
 	
 	}
 
 	//create file with all templates
-	BufferedWriter writer = new BufferedWriter(new FileWriter("htmps.js"));
+	BufferedWriter writer = new BufferedWriter(new FileWriter(file_dest+".js"));
 	writer.write(file_cnt_res);
 	writer.close();
 
